@@ -100,11 +100,6 @@ jobs:
         mv package/new/custom/luci-app-netspeedtest  package/new
         mv package/new/custom/speedtest-cli package/new
         rm -rf package/new/custom
-        find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-        find ./ | grep Makefile | grep mosdns | xargs rm -f
-        find ./ | grep Makefile | grep v2dat | xargs rm -f
-        git clone --depth 1 https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-        git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
         ./scripts/feeds install -a
   
     - name: Load Custom Configuration(加载自定义配置)
