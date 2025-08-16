@@ -12,6 +12,9 @@ sed -i 's/\/bin\/login/\/bin\/login -f root/' feeds/packages/utils/ttyd/files/tt
 # bash 替换 ash
 sed -i '1s/ash/bash/' package/base-files/files/etc/passwd
 
+# 修改 luci-app-cpufreq
+sed -i 's/CPU 性能优化调节/CPU 频率/g' feeds/luci/applications/luci-app-cpufreq/po/zh_Hans/cpufreq.po
+
 # 设置默认 root 密码为 password
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.::0:99999:7:::/g' package/base-files/files/etc/shadow
 
