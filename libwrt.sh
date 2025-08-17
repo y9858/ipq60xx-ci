@@ -18,6 +18,5 @@ sed -i 's/CPU 性能优化调节/CPU 频率/g' feeds/luci/applications/luci-app-
 # 设置默认 root 密码为 password
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.::0:99999:7:::/g' package/base-files/files/etc/shadow
 
-# 设置 etc/openwrt_release
-sed -i "s|DISTRIB_REVISION='.*'|DISTRIB_REVISION='R$(date +%y.%m.%d)'|g" package/base-files/files/etc/openwrt_release
-echo "DISTRIB_SOURCECODE='immortalwrt'" >>package/base-files/files/etc/openwrt_release
+# 设置 etc/build_date
+date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
