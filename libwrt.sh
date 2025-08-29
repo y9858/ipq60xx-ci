@@ -20,3 +20,4 @@ sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.::0:99999:7
 
 # 设置 etc/build_date
 date "+%Y-%m-%d %H:%M:%S %z" >> package/base-files/files/etc/build_date
+sed -i "s|OPENWRT_RELEASE="%D %V %C"|OPENWRT_RELEASE="%D %V 七夕节版"|g" package/base-files/files/usr/lib/os-release
