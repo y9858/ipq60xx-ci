@@ -6,8 +6,8 @@ on:
 #    - cron: 0 19 * * *
 
 env:
-  REPO_URL: https://github.com/stkuroneko/immortalwrt.git
-  REPO_BRANCH: re-ss-01-spi
+  REPO_URL: https://github.com/VIKINGYFY/immortalwrt.git
+  REPO_BRANCH: main
   CONFIG_FILE: configs/ipq60xx-6.12-wifi.config
   DIY_SCRIPT: libwrt.sh
   CLASH_KERNEL: amd64
@@ -160,9 +160,8 @@ jobs:
 
     - name: Upload Firmware To Release(发布固件)
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
-      uses: ncipollo/release-action@v1
+      uses: ncipollo/release-action@main
       with:
-        name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
         allowUpdates: true
         tag: ${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -174,7 +173,7 @@ jobs:
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
-          - 🌐 默认地址: 192.168.1.1
+          - 🌐 默认地址: 192.168.2.1
           - 🔑 默认密码: password
           ### 🧊 固件版本
           - 固件内核版本：${{ env.VERSION_KERNEL }}
