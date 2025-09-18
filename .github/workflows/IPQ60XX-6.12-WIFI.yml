@@ -163,7 +163,7 @@ jobs:
       uses: ncipollo/release-action@main
       with:
         allowUpdates: true
-        tag: ${{ env.FIRMWARE_TAG }}
+        tag: R${{ env.DATE }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
