@@ -97,6 +97,7 @@ jobs:
         ./scripts/feeds update -a
         git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/luci-app-momo
         git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
+        git clone --depth 1 https://github.com/EasyTier/luci-app-easytier package/luci-app-easytier
         git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
         mv package/new/custom/luci-app-netspeedtest  package/new
         mv package/new/custom/speedtest-cli package/new
