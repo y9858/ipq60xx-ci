@@ -26,6 +26,9 @@ sed -i "s/OPENWRT_RELEASE=\".*\"/OPENWRT_RELEASE=\"%D %V $(date '+%Y.%m.%d')\"/g
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
 curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/40_dhcp.js
 
+sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
+git clone --depth 1 https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
+
 rm -rf feeds/luci/applications/luci-app-cpufreq
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/luci-app-momo
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
