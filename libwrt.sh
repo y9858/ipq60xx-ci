@@ -12,6 +12,10 @@ sed -i 's/\/bin\/login/\/bin\/login -f root/' feeds/packages/utils/ttyd/files/tt
 # bash 替换 ash
 sed -i '1s/ash/bash/' package/base-files/files/etc/passwd
 
+# 添加 luci-app-tailscale
+sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
+git clone --depth 1 https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
+
 # 修改 luci-app-cpufreq
 sed -i 's/CPU 性能优化调节/CPU 性能调节/g' feeds/luci/applications/luci-app-cpufreq/po/zh_Hans/cpufreq.po
 
@@ -25,9 +29,6 @@ sed -i "s/OPENWRT_RELEASE=\".*\"/OPENWRT_RELEASE=\"%D %V $(date '+%Y.%m.%d')\"/g
 # 修改首页显示
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
 curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/40_dhcp.js
-
-#sed -i '/\/etc\/init\.d\/tailscale/d;/\/etc\/config\/tailscale/d;' feeds/packages/net/tailscale/Makefile
-#git clone --depth 1 https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
 
 #git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/luci-app-momo
 #git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
