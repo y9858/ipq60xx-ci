@@ -34,6 +34,7 @@ curl -o feeds/luci/modules/luci-base/po/zh_Hans/base.po https://raw.githubuserco
 
 #git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/luci-app-momo
 #git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki package/luci-app-nikki
+rm -rf feeds/packages/net/speedtest-cli
 git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
 mv package/new/custom/luci-app-netspeedtest  package/new
 mv package/new/custom/speedtest-cli package/new
