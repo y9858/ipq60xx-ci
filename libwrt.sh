@@ -31,6 +31,16 @@ rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/stat
 curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/40_dhcp.js
 rm -rf feeds/luci/modules/luci-base/po/zh_Hans/base.po
 curl -o feeds/luci/modules/luci-base/po/zh_Hans/base.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/base.po
+rm -rf feeds/luci/modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js
+curl -o feeds/luci/modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/dhcp.js
+rm -rf feeds/luci/modules/luci-base/htdocs/luci-static/resources/form.js
+curl -o feeds/luci/modules/luci-base/htdocs/luci-static/resources/form.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/form.js
+rm -rf feeds/luci/modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js
+curl -o feeds/luci/modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/interfaces.js
+rm -rf feeds/luci/modules/luci-mod-network/root/usr/share/luci/menu.d/luci-mod-network.json
+curl -o feeds/luci/modules/luci-mod-network/root/usr/share/luci/menu.d/luci-mod-network.json https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/luci-mod-network.json
+rm -rf feeds/luci/modules/luci-base/htdocs/luci-static/resources/tools/widgets.js
+curl -o feeds/luci/modules/luci-base/htdocs/luci-static/resources/tools/widgets.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/widgets.js
 
 git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/luci-app-momo
 rm -rf feeds/packages/net/speedtest-cli
