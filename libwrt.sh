@@ -1,10 +1,5 @@
 #!/bin/bash
 
-rm -rf feeds/luci/*
-curl -o feeds/luci-1b8564e.zip https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/luci-1b8564e.zip
-unzip feeds/luci-1b8564e.zip -d feeds/luci
-rm -rf feeds/luci-1b8564e.zip
-
 # 修改默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci-light/Makefile
 
@@ -34,14 +29,9 @@ sed -i "s/OPENWRT_RELEASE=\".*\"/OPENWRT_RELEASE=\"%D %V $(date '+%Y.%m.%d')\"/g
 # 修改首页显示
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
 curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/40_dhcp.js
-
 rm -rf feeds/luci/modules/luci-base/po/zh_Hans/base.po
 curl -o feeds/luci/modules/luci-base/po/zh_Hans/base.po https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/base.po
 
-rm -rf feeds/luci/modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js
-curl -o feeds/luci/modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/interfaces.js
-
-git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-momo package/luci-app-momo
 rm -rf feeds/packages/net/speedtest-cli
 git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
 mv package/new/custom/luci-app-netspeedtest  package/new
