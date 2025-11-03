@@ -29,6 +29,8 @@ sed -i "s/OPENWRT_RELEASE=\".*\"/OPENWRT_RELEASE=\"%D %V $(date '+%Y.%m.%d')\"/g
 # 修改首页显示
 rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js
 curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/40_dhcp.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/40_dhcp.js
+rm -rf feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/index.js
+curl -o feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/index.js https://raw.githubusercontent.com/y9858/Home-mod/refs/heads/main/index.js
 
 rm -rf feeds/packages/net/speedtest-cli
 git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
