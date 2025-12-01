@@ -40,7 +40,7 @@ rm -rf package/new/custom
 
 WIFI_SH=$(find ./target/linux/{mediatek/filogic,qualcommax}/base-files/etc/uci-defaults/ -type f -name "*set-wireless.sh" 2>/dev/null)
 WIFI_UC="./package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
-WRT_SSID=LibWrt
+WRT_SSID=ImmWrt
 WRT_WORD=12345678
 if [ -f "$WIFI_SH" ]; then
 	#修改WIFI名称
