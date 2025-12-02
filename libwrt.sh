@@ -38,9 +38,6 @@ mv package/new/custom/luci-app-netspeedtest  package/new
 mv package/new/custom/speedtest-cli package/new
 rm -rf package/new/custom
 
-rm -rf feeds/luci/applications/luci-app-attendedsysupgrade
-rm -rf feeds/packages/utils/attendedsysupgrade-common
-
 WIFI_SH=$(find ./target/linux/{mediatek/filogic,qualcommax}/base-files/etc/uci-defaults/ -type f -name "*set-wireless.sh" 2>/dev/null)
 WIFI_UC="./package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
 WRT_SSID=ImmWrt
